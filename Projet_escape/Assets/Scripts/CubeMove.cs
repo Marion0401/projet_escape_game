@@ -8,8 +8,15 @@ public class CubeMove : MonoBehaviour
     public CharacterController characterController;
     public Transform Cam;
     public float speed;
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
     Vector3 CamRot;
+    Vector3 prevCamRot;
+    Vector3 HCamRot;
+    
+    [SerializeField] GameObject PrefabBall;
+
+    [SerializeField] private Transform Head;
+    private Vector3 Hoffset;
 
     [Range(20, 1)]
     public int gravity = 10;
@@ -18,50 +25,61 @@ public class CubeMove : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+
+    /*void Start()
     {
-       
+        Move();
+        Hoffset = transform.position - Head.position;
+    }*/
+
+    IEnumerator Start()
+    {
+        Hoffset = transform.position - Head.position;
+
+        for (int i = 0; i < 10000; i++)
+        {
+            GameObject go = GameObject.Instantiate
+                (
+                PrefabBall, 
+                Vector3.up * 10 
+                + (Random.value * 2 - 1) * Vector3.right 
+                + (Random.value *2 -1) * Vector3.forward, 
+                Quaternion.identity
+                );
+            //print(i);
+            yield return new WaitForSeconds(0.0001f);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        HeadMove();
         Move();
-        
-        /*if (Input.GetAxis("Mouse X") < 0)
-        {
-            //transform.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 5 * mouseSensitivity, 0);
-            print("left");
-        }
-
-        if (Input.GetAxis("Mouse X") > 0)
-        {
-            //transform.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 5 * mouseSensitivity, 0);
-            print("right");
-        }*/
-
-
     }
 
-    
 
     private void Move()
     {
+
+
+
         float horizontalMove = Input.GetAxis("Horizontal");
         float verticalMove = Input.GetAxis("Vertical");
         float upwardsMove = Input.GetAxis("Jump");
-        
+
         if (characterController.isGrounded)
         {
-            if (horizontalMove != 0 || verticalMove != 0 || upwardsMove != 0)
+            if (horizontalMove != 0 || verticalMove != 0)
             {
                 CamRot = transform.position + Cam.forward;
                 CamRot.y = transform.position.y;
-                transform.LookAt(CamRot);
+                transform.LookAt(Vector3.Slerp(prevCamRot, CamRot, 0.2f));
+                prevCamRot = CamRot;
             }
 
 
-            moveDirection = new Vector3(horizontalMove, upwardsMove, verticalMove);
+            moveDirection = new Vector3(horizontalMove, upwardsMove * 3, verticalMove);
             moveDirection = transform.TransformDirection(moveDirection);
         }
 
@@ -69,5 +87,17 @@ public class CubeMove : MonoBehaviour
         //transform.rotation = CamRot;
         moveDirection.y -= gravity * Time.deltaTime;
         characterController.Move(moveDirection * speed * Time.deltaTime);
+
+
+
+    }
+
+    private void HeadMove()
+    {
+
+        HCamRot = Head.position + Cam.forward;
+        HCamRot.y = Head.position.y;
+        Head.LookAt(HCamRot);
+        Head.position = transform.position - Hoffset;
     }
 }
