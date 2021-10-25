@@ -26,7 +26,7 @@ public class script1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(paneau_num);
+        //Debug.Log(paneau_num);
         if (paneau_num == 0)
         {
             controle.SetActive(false);
