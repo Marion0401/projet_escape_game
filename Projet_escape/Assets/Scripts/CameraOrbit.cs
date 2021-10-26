@@ -55,7 +55,6 @@ public class CameraOrbit : MonoBehaviour
         //Rotation verticale
         if (Rotate)
         {
-            print(transform.rotation.y);
 
            
             Quaternion camTurnAngle =

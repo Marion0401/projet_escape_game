@@ -8,6 +8,7 @@ public class CubeMove : MonoBehaviour
     public CharacterController characterController;
     public Transform Cam;
     public float speed;
+    private int run = 1;
     public Vector3 moveDirection;
     Vector3 CamRot;
     Vector3 prevCamRot;
@@ -26,13 +27,13 @@ public class CubeMove : MonoBehaviour
 
     // Start is called before the first frame update
 
-    /*void Start()
+    void Start()
     {
         Move();
         Hoffset = transform.position - Head.position;
-    }*/
+    }
 
-    IEnumerator Start()
+    /*IEnumerator Start()
     {
         Hoffset = transform.position - Head.position;
 
@@ -49,7 +50,7 @@ public class CubeMove : MonoBehaviour
             //print(i);
             yield return new WaitForSeconds(0.0001f);
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -61,6 +62,10 @@ public class CubeMove : MonoBehaviour
 
     private void Move()
     {
+        if(Input.GetKey(KeyCode.LeftShift))
+        { run = 2; }
+        else
+        { run = 1; }
 
 
 
@@ -78,14 +83,14 @@ public class CubeMove : MonoBehaviour
                 prevCamRot = CamRot;
             }
 
-
-            moveDirection = new Vector3(horizontalMove, upwardsMove * 3, verticalMove);
+            moveDirection = new Vector3(horizontalMove * run, upwardsMove * 3, verticalMove * run);
             moveDirection = transform.TransformDirection(moveDirection);
         }
 
         //CamRot.y = Cam.rotation.y;
         //transform.rotation = CamRot;
         moveDirection.y -= gravity * Time.deltaTime;
+       
         characterController.Move(moveDirection * speed * Time.deltaTime);
 
 
