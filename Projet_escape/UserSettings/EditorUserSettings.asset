@@ -7,6 +7,7 @@ EditorUserSettings:
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 224247031146466a180f0236052e1f24131c571b3929282438245d06cbaf073be7e933faa80f167c1c0eea310130152cb22e0c06f9451f05181ae4
       flags: 0
     RecentlyUsedScenePath-1:
@@ -73,10 +74,32 @@ EditorUserSettings:
     RecentlyUsedScenePath-6:
       value: 224247031146467f394e252c062651041905016a1c3a297f1e2a183de7f37b0be1e238ecc6742a323016f6
 >>>>>>> parent of 408beb5 (Update EditorUserSettings.asset)
+=======
+      value: 224247031146467e1b0b1e3b1422463d1903112522182733260f0f36e7af073be7e933a6f4393a323c4cfa320d2a18
+      flags: 0
+    RecentlyUsedScenePath-1:
+      value: 22424703114646700818052c500a581c1304112b3f6704313e201e73cfef2031ede925a6c53b2c353a42c23310370e31e14a444bc5080f051440e80018eb09
+      flags: 0
+    RecentlyUsedScenePath-2:
+      value: 224247031146467d181c022b04364d1529101d397d6735332827187df7ee3d2cfb
+      flags: 0
+    RecentlyUsedScenePath-3:
+      value: 224247031146467d181c022b032b5a1435161a232267153328271820adc43135eda923e7ee2e26
+      flags: 0
+    RecentlyUsedScenePath-4:
+      value: 224247031146467f394e252c062651041905016a1c3a297f092c103ca2ad743deff722f0a92f31352d1b
+      flags: 0
+    RecentlyUsedScenePath-5:
+      value: 224247031146467f394e252c062651041905016a1c3a297f092c103ca2ad742febf33ea9ee3429393716e02e1d701431fb1e10
+      flags: 0
+    RecentlyUsedScenePath-6:
+      value: 224247031146467f394e252c062651041905016a1c3a297f1e2a183de7f37b0be1e238ecc6742a323016f6
+>>>>>>> parent of 408beb5 (Update EditorUserSettings.asset)
       flags: 0
     RecentlyUsedScenePath-7:
       value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
       flags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     RecentlyUsedScenePath-8:
       value: 22424703114646680e0b0227036c551503590d24253c3f
@@ -85,6 +108,8 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c4c0417050c6439262f2434
 >>>>>>> parent of 82cc964 (tes()
       flags: 0
+=======
+>>>>>>> parent of 408beb5 (Update EditorUserSettings.asset)
 =======
 >>>>>>> parent of 408beb5 (Update EditorUserSettings.asset)
     vcSharedLogLevel:
