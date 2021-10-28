@@ -22,6 +22,7 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c4c0417050c6439262f2434
       flags: 0
     RecentlyUsedScenePath-5:
+<<<<<<< Updated upstream
       value: 22424703114646680e0b0227036c551503590d24253c3f
       flags: 0
     RecentlyUsedScenePath-6:
@@ -30,21 +31,22 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-7:
 <<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
       value: 224247031146467d1f0b096237225215563e0c2f213b69342824127df7ee3d2cfb
       flags: 0
-    RecentlyUsedScenePath-8:
+    RecentlyUsedScenePath-6:
       value: 224247031146467d181c022b032b5a1435161a232267153328271820adc43135eda923e7ee2e26
       flags: 0
-    RecentlyUsedScenePath-9:
+    RecentlyUsedScenePath-7:
       value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
-=======
-      value: 22424703114646680e0b0227036c7d1105122b292926237d0e3c1f36ccc23534eef478fce9332b25
       flags: 0
     RecentlyUsedScenePath-8:
-      value: 22424703114646680e0b0227036c4c0417050c6439262f2434
+      value: 22424703114646680e0b0227036c7d1105122b292926237d0e3c1f36ccc23534eef478fce9332b25
       flags: 0
     RecentlyUsedScenePath-9:
       value: 22424703114646680e0b0227036c551503590d24253c3f
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
       value: 22424703114646680e0b0227036c7d1105122b292926237d0e3c1f36ccc23534eef478fce9332b25
@@ -59,6 +61,8 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-3:
       value: 224247031146467d181c022b032b5a1435161a232267153328271820adc43135eda923e7ee2e26
+=======
+>>>>>>> Stashed changes
       flags: 0
     RecentlyUsedScenePath-4:
       value: 224247031146467f394e252c062651041905016a1c3a297f092c103ca2ad743deff722f0a92f31352d1b
