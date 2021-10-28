@@ -24,10 +24,17 @@ EditorUserSettings:
       value: 224247031146467d181c022b032b5a1435161a232267153328271820adc43135eda923e7ee2e26
       flags: 0
     RecentlyUsedScenePath-6:
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
       flags: 0
     RecentlyUsedScenePath-7:
       value: 22424703114646680e0b0227036c7d1105122b292926237d0e3c1f36ccc23534eef478fce9332b25
+=======
+      value: 22424703114646680e0b0227036c7d1105122b292926237d0e3c1f36ccc23534eef478fce9332b25
+      flags: 0
+    RecentlyUsedScenePath-7:
+      value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
+>>>>>>> parent of 82cc964 (tes()
       flags: 0
     RecentlyUsedScenePath-8:
       value: 22424703114646680e0b0227036c551503590d24253c3f
