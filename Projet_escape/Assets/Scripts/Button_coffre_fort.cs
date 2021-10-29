@@ -53,32 +53,16 @@ public class Button_coffre_fort : MonoBehaviour
         mauvaiscode.SetActive(false);
     }
 
-    public void OnClickButton1()
+    public void OnClickButton_CoffreFort(int chiffre)
     {
         if (code != "nice")
         {
-            code = code + '1';
+            code = code + chiffre;
             Debug.Log(code);
         }
     }
 
-    public void OnClickButton2()
-    {
-        if (code != "nice")
-        {
-            code = code + '2';
-            Debug.Log(code);
-        }
-    }
 
-    public void OnClickButton3()
-    {
-        if (code != "nice")
-        {
-            code = code + '3';
-            Debug.Log(code);
-        }
-    }
 
     public void OnClikButtonClose()
     {
