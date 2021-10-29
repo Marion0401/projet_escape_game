@@ -6,10 +6,14 @@ public class Button_coffre_fort : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject canvas;
+    public GameObject boncode;
+    public GameObject mauvaiscode;
     private string code;
     void Start()
     {
         canvas.SetActive(false);
+        boncode.SetActive(false);
+        mauvaiscode.SetActive(false);
     }
 
     // Update is called once per frame
@@ -18,16 +22,31 @@ public class Button_coffre_fort : MonoBehaviour
         if (code.Length == 4 && code != "1233" && code != "nice")
         {
             Debug.Log("Mauvais code");
-            code = "";   
+            code = "";
+            StartCoroutine(MauvaisCodeEntrer());
         }
 
         if (code=="1233")
         {
             Debug.Log("bon code");
             code="nice";
+            StartCoroutine(BonCodeEntrer());
         }   
     }
 
+    IEnumerator BonCodeEntrer()
+    {
+        boncode.SetActive(true);
+        yield return new WaitForSeconds(2);
+        canvas.SetActive(false);
+    }
+
+    IEnumerator MauvaisCodeEntrer()
+    {
+        mauvaiscode.SetActive(true);
+        yield return new WaitForSeconds(2);
+        mauvaiscode.SetActive(false);
+    }
 
     public void OnClickButton1()
     {
