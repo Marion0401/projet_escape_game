@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Button_coffre_fort : MonoBehaviour
@@ -8,12 +9,14 @@ public class Button_coffre_fort : MonoBehaviour
     [SerializeField] GameObject canvas;
     public GameObject boncode;
     public GameObject mauvaiscode;
+    public TextMeshProUGUI Code;
     private string code;
     void Start()
     {
         canvas.SetActive(false);
         boncode.SetActive(false);
         mauvaiscode.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -31,7 +34,9 @@ public class Button_coffre_fort : MonoBehaviour
             Debug.Log("bon code");
             code="nice";
             StartCoroutine(BonCodeEntrer());
-        }   
+        }
+
+        Code.text = code;
     }
 
     IEnumerator BonCodeEntrer()
@@ -50,20 +55,29 @@ public class Button_coffre_fort : MonoBehaviour
 
     public void OnClickButton1()
     {
-        code = code + '1';
-        Debug.Log(code);
+        if (code != "nice")
+        {
+            code = code + '1';
+            Debug.Log(code);
+        }
     }
 
     public void OnClickButton2()
     {
-        code = code + '2';
-        Debug.Log(code);
+        if (code != "nice")
+        {
+            code = code + '2';
+            Debug.Log(code);
+        }
     }
 
     public void OnClickButton3()
     {
-        code = code + '3';
-        Debug.Log(code);
+        if (code != "nice")
+        {
+            code = code + '3';
+            Debug.Log(code);
+        }
     }
 
     public void OnClikButtonClose()
