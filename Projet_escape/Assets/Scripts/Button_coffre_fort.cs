@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Button_coffre_fort : MonoBehaviour
 {
@@ -10,13 +11,20 @@ public class Button_coffre_fort : MonoBehaviour
     public GameObject boncode;
     public GameObject mauvaiscode;
     public TextMeshProUGUI Code;
+    public AudioSource sound_good_answer;
+    public AudioSource sound_wrong_answer;
+
     private string code;
+    int jouer_une_foix = 0;
     void Start()
     {
         canvas.SetActive(false);
         boncode.SetActive(false);
         mauvaiscode.SetActive(false);
+
         
+        
+
     }
 
     // Update is called once per frame
@@ -25,6 +33,8 @@ public class Button_coffre_fort : MonoBehaviour
         if (code.Length == 4 && code != "1233" && code != "nice")
         {
             Debug.Log("Mauvais code");
+            sound_wrong_answer.Play();
+
             code = "";
             StartCoroutine(MauvaisCodeEntrer());
         }
@@ -32,13 +42,15 @@ public class Button_coffre_fort : MonoBehaviour
         if (code=="1233")
         {
             Debug.Log("bon code");
-            code="nice";
+            sound_good_answer.Play();
+            code ="nice";
             StartCoroutine(BonCodeEntrer());
         }
 
         Code.text = code;
     }
 
+    
     IEnumerator BonCodeEntrer()
     {
         boncode.SetActive(true);

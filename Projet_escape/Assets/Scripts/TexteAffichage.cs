@@ -21,10 +21,6 @@ public class TexteAffichage : MonoBehaviour
     void Update()
     {
         ActionQuandDedans();
-        if (Input.GetKeyDown("space"))
-        {
-            print("noob");
-        }
     }
 
     private void OnTriggerEnter(Collider col)
