@@ -61,7 +61,7 @@ public class CameraOrbitSimple : MonoBehaviour {
 
         // Le vecteur Position est mis à jour avec la position actuelle du C-C
         //avec un offset vers derrière lui (selon sa nouvelle rotation)
-        Position = InnerCube.position + Vector3.up + InnerCube.forward * CameraDist;
+        Position = InnerCube.position + Vector3.up - InnerCube.forward * CameraDist;
         // On empêche la caméra de passer sous le plan du sol ou trop haut
         Position.y = Mathf.Clamp(Position.y, 0.2f, InnerCube.position.y + 10);
 
