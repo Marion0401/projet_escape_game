@@ -10,13 +10,15 @@ public class PickUp : MonoBehaviour
     public GameObject itemButton;
     public GameObject canvas;
     public Button buttonTake;
-
+    private GameObject key;
+    public bool canEnter = false;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         inventory = player.GetComponent<Inventory>();
+        key = GameObject.FindGameObjectWithTag("Key");
         
 
     }
@@ -52,6 +54,10 @@ public class PickUp : MonoBehaviour
                 create.transform.SetParent(canvas.transform, true);
                 Destroy(gameObject);
                 buttonTake.gameObject.SetActive(false);
+
+               
+
+
                 break;
             }
         }
