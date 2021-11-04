@@ -8,6 +8,7 @@ public class Button_coffre_fort : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject canvas_papier;
     public GameObject boncode;
     public GameObject mauvaiscode;
     public TextMeshProUGUI Code;
@@ -21,10 +22,6 @@ public class Button_coffre_fort : MonoBehaviour
         canvas.SetActive(false);
         boncode.SetActive(false);
         mauvaiscode.SetActive(false);
-
-        
-        
-
     }
 
     // Update is called once per frame
@@ -79,5 +76,6 @@ public class Button_coffre_fort : MonoBehaviour
     public void OnClikButtonClose()
     {
         canvas.SetActive(false);
+        canvas_papier.SetActive(false);
     }
 }

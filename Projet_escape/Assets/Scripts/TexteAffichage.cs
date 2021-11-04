@@ -15,6 +15,7 @@ public class TexteAffichage : MonoBehaviour
     void Start()
     {
         text.SetActive(false);
+        canvas.SetActive(false);
     }
 
     // Update is called once per frame
