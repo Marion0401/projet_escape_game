@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8296944053654446006}
   - component: {fileID: 1318496700635056507}
   - component: {fileID: 2325859502858946100}
-  - component: {fileID: -8586836716975660494}
   m_Layer: 5
   m_Name: lamp_button
   m_TagString: Untagged
@@ -133,16 +132,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-8586836716975660494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346017144173926341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17e109ab7d22d424ebfe87c4181a58de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lamp: {fileID: 0}

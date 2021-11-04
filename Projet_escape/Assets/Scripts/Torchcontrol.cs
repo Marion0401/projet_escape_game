@@ -6,20 +6,21 @@ using UnityEngine.UI;
 public class Torchcontrol : MonoBehaviour
 {
     bool toggled = false;
-    [SerializeField] GameObject Lamp;
+    //[SerializeField] public GameObject Lamp;
     // Start is called before the first frame update
     void Start()
     {
-        Lamp.transform.gameObject.SetActive(toggled);
+        transform.gameObject.SetActive(toggled);
 
-        this.GetComponent<Button>().onClick.AddListener(ToggleLamp);
+        //this.GetComponent<Button>().onClick.AddListener(ToggleLamp);
     }
 
     
     public void ToggleLamp()
     {
+        print("click");
         toggled = !toggled;
-        Lamp.transform.gameObject.SetActive(toggled);
+        transform.gameObject.SetActive(toggled);
     }
 
   

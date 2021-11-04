@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickUp : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PickUp : MonoBehaviour
     private Inventory inventory;
     public GameObject itemButton;
     public GameObject canvas;
+    public Button buttonTake;
 
 
     // Start is called before the first frame update
@@ -20,26 +22,38 @@ public class PickUp : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Bonjour");
+        
         if (other.gameObject==player)
         {
-            Debug.Log(gameObject.name);
-            for (int i=0; i < inventory.slots.Length; i++)
-            {
-                if (inventory.isFull[i] == false) // si la case est vide on l'ajoute à l'inventaire
-                {
-                    inventory.isFull[i] = true;
-                    GameObject create= Instantiate(itemButton, inventory.slots[i].transform.position, Quaternion.identity);
-                    create.transform.SetParent(canvas.transform,true);
-                    Destroy(gameObject);
-                    break;
-                }
-            }
+            buttonTake.gameObject.SetActive(true);
+            buttonTake.onClick.AddListener(Take);
+            
         }
     }
-    // Update is called once per frame
-    void Update()
+
+    void OnTriggerExit(Collider other)
     {
-        
+
+        if (other.gameObject == player)
+        {
+            buttonTake.gameObject.SetActive(false);
+
+        }
+    }
+
+    void Take()
+    {
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            if (inventory.isFull[i] == false) // si la case est vide on l'ajoute à l'inventaire
+            {
+                inventory.isFull[i] = true;
+                GameObject create = Instantiate(itemButton, inventory.slots[i].transform.position, Quaternion.identity);
+                create.transform.SetParent(canvas.transform, true);
+                Destroy(gameObject);
+                buttonTake.gameObject.SetActive(false);
+                break;
+            }
+        }
     }
 }
