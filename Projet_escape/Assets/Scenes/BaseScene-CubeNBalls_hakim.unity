@@ -3416,6 +3416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemButton: {fileID: 0}
   canvas: {fileID: 0}
+  buttonTake: {fileID: 0}
 --- !u!1 &785907028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5656,7 +5657,7 @@ GameObject:
   - component: {fileID: 1560044539}
   - component: {fileID: 1560044538}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: papier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
