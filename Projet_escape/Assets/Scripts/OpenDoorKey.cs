@@ -13,7 +13,6 @@ public class OpenDoorKey : MonoBehaviour
     MoveableObject moveableObject;
     bool playerEnter = false;
     public Button buttonOpen;
-    public PickUp key;
     private Inventory inventory;
     
 
@@ -25,19 +24,15 @@ public class OpenDoorKey : MonoBehaviour
         inventory = player.GetComponent<Inventory>();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject == player)     //player has collided with trigger
         {
             buttonOpen.gameObject.SetActive(true);
-            if (key.canEnter == true)
-            {
-                buttonOpen.onClick.AddListener(Open);
-            }
-            
-
-
+            buttonOpen.interactable = VariablesGlobales.door1;
+           
         }
+
     }
 
     void OnTriggerExit(Collider other)
@@ -50,7 +45,7 @@ public class OpenDoorKey : MonoBehaviour
         }
     }
 
-    void Open()
+    public void Open()
     {
         playerEnter = true;
     }
