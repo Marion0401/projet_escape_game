@@ -10,15 +10,14 @@ public class PickUp : MonoBehaviour
     public GameObject itemButton;
     public GameObject canvas;
     public Button buttonTake;
-    private GameObject key;
-    public bool canEnter = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         inventory = player.GetComponent<Inventory>();
-        key = GameObject.FindGameObjectWithTag("Key");
+        
         
 
     }
@@ -45,21 +44,20 @@ public class PickUp : MonoBehaviour
 
     void Take()
     {
+        
         for (int i = 0; i < inventory.slots.Length; i++)
         {
             if (inventory.isFull[i] == false) // si la case est vide on l'ajoute à l'inventaire
             {
+                
                 inventory.isFull[i] = true;
                 GameObject create = Instantiate(itemButton, inventory.slots[i].transform.position, Quaternion.identity);
                 create.transform.SetParent(canvas.transform, true);
                 Destroy(gameObject);
                 buttonTake.gameObject.SetActive(false);
-
-               
-
-
                 break;
             }
+            
         }
     }
 }
