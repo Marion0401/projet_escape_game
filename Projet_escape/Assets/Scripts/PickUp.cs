@@ -12,6 +12,7 @@ public class PickUp : MonoBehaviour
     public Button buttonTake;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +28,10 @@ public class PickUp : MonoBehaviour
         if (other.gameObject==player)
         {
             buttonTake.gameObject.SetActive(true);
+            buttonTake.onClick.RemoveListener(Take);
             buttonTake.onClick.AddListener(Take);
             
+
         }
     }
 
@@ -42,7 +45,7 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    void Take()
+    public void Take()
     {
         
         for (int i = 0; i < inventory.slots.Length; i++)
