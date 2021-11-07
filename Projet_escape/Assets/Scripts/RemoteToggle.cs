@@ -11,7 +11,7 @@ public class RemoteToggle : MonoBehaviour
     }
 
 
-    void Clicked()
+    public void Clicked()
     {
         transform.gameObject.SetActive(!transform.gameObject.activeSelf);
     }
