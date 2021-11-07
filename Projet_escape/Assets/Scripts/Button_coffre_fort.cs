@@ -18,7 +18,7 @@ public class Button_coffre_fort : MonoBehaviour
     public AudioSource sound_wrong_answer;
     [SerializeField] private GameObject coffre;
     public GameObject key;
-
+    public string secretcode;
 
     private string code;
     int jouer_une_foix = 0;
@@ -36,7 +36,7 @@ public class Button_coffre_fort : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (code.Length == 4 && code != "1233" && code != "nice")
+        if (code.Length == 4 && code != secretcode && code != "nice")
         {
             Debug.Log("Mauvais code");
             sound_wrong_answer.Play();
@@ -45,7 +45,7 @@ public class Button_coffre_fort : MonoBehaviour
             StartCoroutine(MauvaisCodeEntrer());
         }
 
-        if (code == "1233")
+        if (code == secretcode)
         {
             Debug.Log("bon code");
             sound_good_answer.Play();
