@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene_marion.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/jeu Version Come.unity
     guid: 0ebf1a3dcee0f98459a4a43fe980decb
+  - enabled: 1
+    path: Assets/Scenes/start.unity
+    guid: 512561ff203d8d34cbbf938c08ec2a43
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 7c22a92d80039b240a366e62c1e4ad11
   m_configObjects: {}

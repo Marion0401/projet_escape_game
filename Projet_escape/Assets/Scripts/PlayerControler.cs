@@ -59,6 +59,21 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    public IEnumerator WaitForSeconde()
+    {
+        yield return new WaitForSeconds(0);
+        anim.SetBool("isTaking", false);
+    }
+
+
+
+    public void On_clik_button_taking()
+    {
+        anim.SetBool("isTaking", true);
+        StartCoroutine(WaitForSeconde());
+    }
+
+
     // Déplace et tourne le personnage 
     private void ApplyInput(float moveInput, float turnInput)
     {

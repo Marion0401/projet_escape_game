@@ -20,7 +20,7 @@ public class script1 : MonoBehaviour
         credit.SetActive(true);
         close.SetActive(true);
         panneau.SetActive(true);
-        panneau.GetComponent<RectTransform>().localPosition = new Vector3(86, 23, 0);
+        panneau.GetComponent<RectTransform>().localPosition = new Vector3(1, 23, 0);
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class script1 : MonoBehaviour
 
     public void OnClickPlay()
     {
-        SceneManager.LoadScene("jeu");
+        SceneManager.LoadScene("Game");
     }
 
 

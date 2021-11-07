@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class Button_coffre_fort : MonoBehaviour
 {
-    
+
 
     // Start is called before the first frame update
     [SerializeField] GameObject canvas;
@@ -17,24 +17,26 @@ public class Button_coffre_fort : MonoBehaviour
     public AudioSource sound_good_answer;
     public AudioSource sound_wrong_answer;
     [SerializeField] private GameObject coffre;
-
+    public GameObject key;
+    public string secretcode;
 
     private string code;
     int jouer_une_foix = 0;
     void Start()
     {
-        coffre.transform.rotation = Quaternion.Euler(0, 0, 0);
+        //coffre.transform.rotation = Quaternion.Euler(0, 0, 0);
         canvas.SetActive(false);
         boncode.SetActive(false);
         mauvaiscode.SetActive(false);
         coffre.SetActive(true);
         Transform porte = transform.Find("Bank-2");
+        key.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (code.Length == 4 && code != "1233" && code != "nice")
+        if (code.Length == 4 && code != secretcode && code != "nice")
         {
             Debug.Log("Mauvais code");
             sound_wrong_answer.Play();
@@ -43,19 +45,22 @@ public class Button_coffre_fort : MonoBehaviour
             StartCoroutine(MauvaisCodeEntrer());
         }
 
-        if (code=="1233")
+        if (code == secretcode)
         {
             Debug.Log("bon code");
             sound_good_answer.Play();
-            code ="nice";
+            code = "nice";
             coffre.transform.rotation = Quaternion.Euler(0, -110, 0);
+            Debug.Log(coffre.transform.position);
+            key.SetActive(true);
             StartCoroutine(BonCodeEntrer());
+
         }
 
         Code.text = code;
     }
 
-    
+
     IEnumerator BonCodeEntrer()
     {
         boncode.SetActive(true);
