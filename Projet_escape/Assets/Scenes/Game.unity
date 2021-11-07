@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 12973464}
   - component: {fileID: 12973463}
   - component: {fileID: 12973465}
+  - component: {fileID: 12973466}
   m_Layer: 0
   m_Name: _SRIPTS
   m_TagString: Untagged
@@ -197,6 +198,19 @@ MonoBehaviour:
   sound_wrong_answer: {fileID: 205175581}
   coffre: {fileID: 396062566}
   key: {fileID: 540773099}
+--- !u!114 &12973466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12973462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab4d155edc29ff41b0813392012599e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1037701566}
 --- !u!1 &29297065
 GameObject:
   m_ObjectHideFlags: 0
@@ -10903,7 +10917,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1276223131}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037701568}
+        m_TargetAssemblyTypeName: PlayerControler, Assembly-CSharp
+        m_MethodName: On_clik_button_taking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1276223131
 MonoBehaviour:
   m_ObjectHideFlags: 0
