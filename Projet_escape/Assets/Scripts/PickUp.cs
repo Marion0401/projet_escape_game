@@ -27,6 +27,7 @@ public class PickUp : MonoBehaviour
         if (other.gameObject==player)
         {
             buttonTake.gameObject.SetActive(true);
+            buttonTake.onClick.RemoveListener(Take);
             buttonTake.onClick.AddListener(Take);
             
         }
