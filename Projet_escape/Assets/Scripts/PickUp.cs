@@ -45,9 +45,11 @@ public class PickUp : MonoBehaviour
 
     void Take()
     {
+        print(1);
         
         for (int i = 0; i < inventory.slots.Length; i++)
         {
+            print(2);
             if (inventory.isFull[i] == false) // si la case est vide on l'ajoute à l'inventaire
             {
                 
