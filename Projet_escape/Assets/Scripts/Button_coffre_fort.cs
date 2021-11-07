@@ -23,7 +23,7 @@ public class Button_coffre_fort : MonoBehaviour
     int jouer_une_foix = 0;
     void Start()
     {
-        coffre.transform.rotation = Quaternion.Euler(0, 0, 0);
+        //coffre.transform.rotation = Quaternion.Euler(0, 0, 0);
         canvas.SetActive(false);
         boncode.SetActive(false);
         mauvaiscode.SetActive(false);
