@@ -50,7 +50,8 @@ public class Button_coffre_fort : MonoBehaviour
             Debug.Log("bon code");
             sound_good_answer.Play();
             code ="nice";
-            coffre.transform.rotation = Quaternion.Euler(0, -110, 0);
+            coffre.transform.rotation  = Quaternion.Euler(0, -110, 0);
+            Debug.Log(coffre.transform.position);
             key.SetActive(true);
             StartCoroutine(BonCodeEntrer());
 
