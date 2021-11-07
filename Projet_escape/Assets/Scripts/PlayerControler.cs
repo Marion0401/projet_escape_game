@@ -61,7 +61,7 @@ public class PlayerControler : MonoBehaviour
 
     public IEnumerator WaitForSeconde()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0);
         anim.SetBool("isTaking", false);
     }
 
