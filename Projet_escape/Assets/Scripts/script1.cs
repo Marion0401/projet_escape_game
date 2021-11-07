@@ -46,7 +46,7 @@ public class script1 : MonoBehaviour
 
     public void OnClickPlay()
     {
-        SceneManager.LoadScene("jeu");
+        SceneManager.LoadScene("Game");
     }
 
 

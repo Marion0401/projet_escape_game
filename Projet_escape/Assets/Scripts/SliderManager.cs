@@ -17,6 +17,6 @@ public class SliderManager : MonoBehaviour
 
         chiffre_volume.text = __slider.GetComponent<Slider>().value.ToString("0.0");
         AudioListener.volume = __slider.GetComponent<Slider>().value;
+        PlayerPrefs.SetFloat("volume", __slider.GetComponent<Slider>().value);
     }
-
 }
