@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonKey1 : MonoBehaviour
+public class ButtonKey2 : MonoBehaviour
 {
-    
     
     public void Click()
     {
-        VariablesGlobales.door1 = true;
+        VariablesGlobales.door2 = true;
     }
 
 }
