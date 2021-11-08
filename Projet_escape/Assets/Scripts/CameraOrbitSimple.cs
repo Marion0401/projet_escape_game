@@ -26,7 +26,8 @@ public class CameraOrbitSimple : MonoBehaviour {
 
         // On place la caméra derrière le C-C (selon son orientation)
         //note : l'orientation du C-C au début du programme est identique à celle du joueur
-        transform.position = InnerCube.position - InnerCube.forward * CameraDist;
+        
+        transform.position = InnerCube.position - InnerCube.right * CameraDist;
 
         // On initialise les vecteurs avec les valeurs de position et rotation (en Euler) de la caméra
         Rotation = transform.rotation.eulerAngles;
@@ -42,12 +43,12 @@ public class CameraOrbitSimple : MonoBehaviour {
         {
             // On mets à jour les composantes du Vecteur Rotation avec
             //les valeurs obtenues par le mouvement de la souris
-            Rotation.x -= Input.GetAxis("Mouse Y") * sensitivity;
+            Rotation.z -= Input.GetAxis("Mouse Y") * sensitivity;
             Rotation.y += Input.GetAxis("Mouse X") * sensitivity;
 
             // Si la rotation sur l'axe X est hors des bornes souhaitées, 
             //on tronque les valeurs
-            Rotation.x = Mathf.Clamp(Rotation.x, -80f, 40f);
+            Rotation.z = Mathf.Clamp(Rotation.z, -40f, 40f);
             // Ceci évite le dépassement de certaines positions pour la caméra
 
         }
@@ -55,13 +56,13 @@ public class CameraOrbitSimple : MonoBehaviour {
 
 
         // La rotation du cube est fixée à celle du vecteur Rotation
-        InnerCube.rotation = Quaternion.Euler(Rotation.x, Rotation.y, 0);
+        InnerCube.rotation = Quaternion.Euler(0, Rotation.y, Rotation.z);
 
 
 
         // Le vecteur Position est mis à jour avec la position actuelle du C-C
         //avec un offset vers derrière lui (selon sa nouvelle rotation)
-        Position = InnerCube.position + Vector3.up - InnerCube.forward * CameraDist;
+        Position = InnerCube.position + Vector3.up - InnerCube.right * CameraDist;
         // On empêche la caméra de passer sous le plan du sol ou trop haut
         Position.y = Mathf.Clamp(Position.y, 0.2f, InnerCube.position.y + 10);
 
