@@ -42,7 +42,7 @@ public class CameraOrbitSimple : MonoBehaviour {
         {
             // On mets à jour les composantes du Vecteur Rotation avec
             //les valeurs obtenues par le mouvement de la souris
-            Rotation.z -= Input.GetAxis("Mouse Y") * sensitivity;
+            Rotation.z += Input.GetAxis("Mouse Y") * sensitivity;
             Rotation.y += Input.GetAxis("Mouse X") * sensitivity;
 
             // Si la rotation sur l'axe X est hors des bornes souhaitées, 
