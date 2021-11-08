@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Button_coffre_fort : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Button_coffre_fort : MonoBehaviour
     [SerializeField] private GameObject coffre;
     public GameObject key;
     public string secretcode;
+   
 
     private string code;
     int jouer_une_foix = 0;
@@ -38,7 +40,7 @@ public class Button_coffre_fort : MonoBehaviour
     {
         if (code.Length == 4 && code != secretcode && code != "nice")
         {
-            Debug.Log("Mauvais code");
+            
             sound_wrong_answer.Play();
 
             code = "";
@@ -47,13 +49,14 @@ public class Button_coffre_fort : MonoBehaviour
 
         if (code == secretcode)
         {
-            Debug.Log("bon code");
+            
             sound_good_answer.Play();
             code = "nice";
             coffre.transform.rotation = Quaternion.Euler(0, -110, 0);
             Debug.Log(coffre.transform.position);
             key.SetActive(true);
             StartCoroutine(BonCodeEntrer());
+            
 
         }
 

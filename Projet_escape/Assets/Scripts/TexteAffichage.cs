@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TexteAffichage : MonoBehaviour
 {
 
-    [SerializeField] private GameObject text;
+    //[SerializeField] private GameObject text;
     [SerializeField] private GameObject sphere;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject canvas;
+    public Button button;
 
     private int dedans;
     // Start is called before the first frame update
     void Start()
     {
-        text.SetActive(false);
+        //text.SetActive(false);
         canvas.SetActive(false);
     }
 
@@ -30,10 +32,11 @@ public class TexteAffichage : MonoBehaviour
         if (col.name == player.name)
         {
             dedans = 1;
-            print("ok");
-            text.SetActive(true);
+            button.gameObject.SetActive(true);
+            //text.SetActive(true);
         }
     }
+    
 
     public void ActionQuandDedans()
     {
@@ -41,7 +44,7 @@ public class TexteAffichage : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                print("okok");
+                
                 interact_coffre_fort();
             }
         }
@@ -55,8 +58,9 @@ public class TexteAffichage : MonoBehaviour
         if (col.name == player.name)
         {
             dedans = 0;
+            button.gameObject.SetActive(false);
             //print("no");
-            text.SetActive(false);
+            //text.SetActive(false);
             canvas.SetActive(false);
         }
     }
