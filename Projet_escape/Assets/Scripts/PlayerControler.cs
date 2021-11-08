@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private float speed = 3f; //vitesse de course
     public float rotationRate = 360; // Faire un tour complet
 
-    // Noms des inputs (project settings) à lire pour le déplacement 
+    // Noms des inputs (project settings) ï¿½ lire pour le dï¿½placement 
     private string moveInputAxis = "Vertical";
     private string turnInputAxis = "Horizontal";
 
@@ -15,17 +15,19 @@ public class PlayerControler : MonoBehaviour
     public float heightJump;
 
 
-    // Seuil de l'input pour déterminer s'il se déplace 
+    // Seuil de l'input pour dï¿½terminer s'il se dï¿½place 
     public float minToMove = 0.1f;
 
-    // Référence pour l'animation 
+    public GameObject cam;
+
+    // Rï¿½fï¿½rence pour l'animation 
     Animator anim;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        // Assigner l'animator pour accéder à la variable isMoving 
+        // Assigner l'animator pour accï¿½der ï¿½ la variable isMoving 
         anim = GetComponent<Animator>();
     }
 
@@ -33,29 +35,46 @@ public class PlayerControler : MonoBehaviour
     void Update()
     {
         // Lire la valeur des inputs (entre -1 et 1) 
-        float moveAxis = Input.GetAxis(moveInputAxis);
-        float turnAxis = Input.GetAxis(turnInputAxis);
+        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
 
-        // Applique les inputs 
-        ApplyInput(moveAxis, turnAxis);
+        //transform.rotation = Quaternion.Euler(0, cam.transform.rotation.y, 0);
+        // Debug.Log(cam.transform.rotation.y);
 
-        // Si l'input dépasse le seuil,  
-        // modifier la valeur dans l'animator pour décider entre idle et marche 
-        if (moveAxis > minToMove || moveAxis < -minToMove)
+
+        if (vertical != 0)
+        {
+            transform.eulerAngles = new Vector3(0, cam.transform.eulerAngles.y, 0);
+            transform.Translate(Vector3.forward * vertical * speed * Time.deltaTime);
+        }
+
+        if (horizontal != 0)
+        {
+            transform.Translate(Vector3.right * horizontal * speed * Time.deltaTime);
+        }
+
+
+        if (vertical!=0 || horizontal!=0)
+        {
             anim.SetBool("isMoving", true);
+        }
         else
+        {
             anim.SetBool("isMoving", false);
+        }
+
+       
 
         // Si on appuie sur espace
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("isJumping", true);
-            
+
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             anim.SetBool("isJumping", false);
-            
+
         }
     }
 
@@ -74,33 +93,35 @@ public class PlayerControler : MonoBehaviour
     }
 
 
-    // Déplace et tourne le personnage 
+    // Dï¿½place et tourne le personnage 
     private void ApplyInput(float moveInput, float turnInput)
     {
         Move(moveInput);
         Turn(turnInput);
     }
 
-    // Déplace le personnage 
+    // Dï¿½place le personnage 
     private void Move(float input)
     {
+        Debug.Log("ok");
         // Effectue une translation selon un vecteur3 :  
-        //      .forward : vers l'avant du modèle 
+        //      .forward : vers l'avant du modï¿½le 
         //      input : entre -1 et 1 
-        //      speed : facteur donné en paramètre modifiable dans l'éditeur 
-        //      deltaTime : pour un mouvement par seconde plutôt que par frame  
+        //      speed : facteur donnï¿½ en paramï¿½tre modifiable dans l'ï¿½diteur 
+        //      deltaTime : pour un mouvement par seconde plutï¿½t que par frame  
         transform.Translate(Vector3.forward * input * speed * Time.deltaTime);
+        //transform.Translate(new Vector3(cam.transform.rotation.y, 0,0) * input * speed * Time.deltaTime);
     }
 
-    
+
 
     // Tourne le personnage 
     private void Turn(float input)
     {
         // Effectue une rotation en angle Euler sur X, Y, Z, en Y dans ce cas (gauche-droite) 
         //      input : entre -1 et 1 
-        //      rotationRate : nb degrés par seconde 
-        //      deltaTime : pour un mouvement par seconde plutôt que par frame 
+        //      rotationRate : nb degrï¿½s par seconde 
+        //      deltaTime : pour un mouvement par seconde plutï¿½t que par frame 
         transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
     }
 }
