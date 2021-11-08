@@ -19204,6 +19204,7 @@ MonoBehaviour:
   targetTransform: {fileID: 184577566}
   offsetx: 4.85
   offsety: 3.54
+  sensibilite: 2
 --- !u!135 &1380237052
 SphereCollider:
   m_ObjectHideFlags: 0
