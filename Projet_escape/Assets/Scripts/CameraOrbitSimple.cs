@@ -47,7 +47,7 @@ public class CameraOrbitSimple : MonoBehaviour {
 
             // Si la rotation sur l'axe X est hors des bornes souhaitées, 
             //on tronque les valeurs
-            Rotation.z = Mathf.Clamp(Rotation.z, -40f, 40f);
+            Rotation.z = Mathf.Clamp(Rotation.z, -30f, 40f);
             // Ceci évite le dépassement de certaines positions pour la caméra
 
         }
